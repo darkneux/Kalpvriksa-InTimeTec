@@ -12,6 +12,11 @@ public:
         next = NULL;
     }
 
+    Node(const Node<T> &other) {
+        data = other.data;
+        next = NULL;  
+    }
+
     T getData() {
         return data;
     }
@@ -31,16 +36,33 @@ class CustomStack{
     CustomStack(){
         head = NULL;
     }
+    
+    CustomStack(const CustomStack<T> &other) {
+        head = NULL;
+        Node<T> *otherCurrent = other.head;
+        while (otherCurrent != NULL) {
+            push(otherCurrent->getData());
+            otherCurrent = otherCurrent->getNext();
+        }
+    }
+
+
     bool isempty(){
         return head == NULL;
     }
+
     T top(){
-        if(isempty()){
-            cout<<"Warning : Stack is Empty ";
+        try {
+            if (isempty()) {
+                throw runtime_error("Error: Stack UnderFlow");
+            }
+            return head->getData();
+        } catch (const exception& e) {
+            cout << e.what()<<" -- Default Value : ";;
             return T();
         }
-        return head->getData();
     }
+
     void pop(){
         if(isempty())return;
         head = head->getNext();
@@ -51,6 +73,14 @@ class CustomStack{
             container->setNext(head);
         }
         head = container;
+    } 
+    
+    ~CustomStack() {
+        while (head != NULL) {
+            Node<T> *temp = head;
+            head = head->getNext();
+            delete temp;
+        }
     }
 
 };
@@ -64,5 +94,10 @@ int main(){
     cout<<stk.top()<<endl;
     stk.pop();
     cout<<stk.top()<<endl;
-    cout<<stk.isempty()<<endl;
+    cout<<stk.isempty()<<endl;  
+    stk.push(4);
+    cout<<"----------------"<<endl;
+    CustomStack<long long> obj(stk);
+    cout<<obj.top()<<endl;
+
 }

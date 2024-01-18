@@ -14,8 +14,14 @@ class CustomStack{
           this->index = -1;
         }
 
-         ~CustomStack() {
-        delete[] data;
+         
+        CustomStack(const CustomStack& other) {
+          size = other.size;
+          index = other.index;
+          data = new T[size];
+          for (int i = 0; i <= index; ++i) {
+              data[i] = other.data[i];
+          }
         }
 
         bool isempty(){
@@ -23,16 +29,20 @@ class CustomStack{
         }
 
         T top(){
-         if(isempty()){
-            cout<<"Warning : Stack is Empty ";
-            return T();
+          try {
+             if (isempty()) {
+                  throw runtime_error("Error: Stack UnderFlow");
+              }
+              return data[index];
+          }catch (const exception& e) {
+              cout << e.what()<<" -- Default Value : ";;
+              return T();
           }
-         return data[index];
         }
 
         void push(T val){
           if(index+1==size){
-            cout<<"Error : Stack Is Full"<<endl;
+            cout<<"Error : Stack OverFlow"<<endl;
             return;
            }
           index++;
@@ -41,10 +51,14 @@ class CustomStack{
 
         void pop(){
         if(index == -1){
-           cout<<"Stack Is Empty"<<endl;
+           cout<<"Stack UnderFlow"<<endl;
            return;
           }
         index--;
+        }
+        
+        ~CustomStack() {
+        delete[] data;
         }
 };
 
@@ -59,4 +73,9 @@ int main(){
     stk.pop();
     cout<<stk.top()<<endl;
     cout<<stk.isempty()<<endl;
+    stk.push(4);
+    cout<<"---------------------"<<endl;
+    CustomStack<long long > obj(stk);
+    cout<<obj.top()<<endl;
+
 }
