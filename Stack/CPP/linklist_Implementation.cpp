@@ -96,8 +96,10 @@ int main(){
     cout<<stk.top()<<endl;
     cout<<stk.isempty()<<endl;  
     stk.push(4);
-    cout<<"----------------"<<endl;
-    CustomStack<long long> obj(stk);
+    cout<<"---------------------"<<endl;
+    CustomStack<long long > obj(stk);
+    obj.push(5);
     cout<<obj.top()<<endl;
+    cout<<stk.top()<<endl;
 
 }

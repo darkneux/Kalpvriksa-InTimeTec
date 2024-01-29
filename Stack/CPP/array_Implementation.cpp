@@ -76,6 +76,9 @@ int main(){
     stk.push(4);
     cout<<"---------------------"<<endl;
     CustomStack<long long > obj(stk);
+    obj.push(5);
     cout<<obj.top()<<endl;
+    cout<<stk.top()<<endl;
+
 
 }

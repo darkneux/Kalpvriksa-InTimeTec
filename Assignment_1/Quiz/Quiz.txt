@@ -1,0 +1,184 @@
+1: %d format specifies to 
+
+a) character
+b) interger
+c) float
+d) string
+Ans: (b)
+
+2 : which among of these might avoid buffer overflow problems
+
+a) scanf
+b) gets
+c) fgets
+d) all of the above
+Ans: (c)
+
+3 : which of these functions reads formatted input from string
+
+a) gets
+b) fgets
+c) sscanf
+d) scanf
+Ans: 
+
+4 : on success scanf returns :
+
+a) The number of values converted and assigned successfully
+b) EOF 
+c) less than zero
+d) none of the above
+Ans:
+
+5 : %s format specifies to 
+a)integer
+b)character
+c)string
+d)float
+Ans:
+
+6 : What will be the output of the following C program?
+
+	#include <stdio.h>
+
+	int main() {
+	    int num;
+	    printf("Enter a number: ");
+	    scanf("%d", &num);
+	    printf("The entered number is: %d\n", num);
+	    return 0;
+	}
+
+a) It will print "The entered number is:" followed by the entered number
+b) It will print "Enter a number:" followed by the entered number
+c) It will print "The entered number is:" followed by a garbage value
+d) It will print nothing
+Ans:
+
+7 : What is the output of the following C program?
+
+	#include <stdio.h>
+
+	int main() {
+	    char name[20];
+	    printf("Enter your name: ");
+	    gets(name);
+	    printf("Hello, %s!\n", name);
+	    return 0;
+	}
+	
+a) It will print "Hello, " followed by the entered name
+b) It will print "Enter your name:" followed by the entered name
+c) It will print "Hello, " followed by a garbage value
+d) It will result in a compilation error
+Ans:
+
+8 : Consider the following C program:
+
+	#include <stdio.h>
+
+	int main() {
+	    float height;
+	    printf("Enter your height in meters: ");
+	    scanf("%f", &height);
+	    printf("Your height is %.2f meters.\n", height);
+	    return 0;
+	}
+	
+If a user enters 1.75 when prompted, what will be the output?
+
+a) It will print "Your height is 1.750000 meters."
+b) It will print "Your height is 1.75 meters."
+c) It will print "Your height is 1.7500 meters."
+d) It will print "Your height is 1 meters."
+Ans:
+
+
+9 : What will be the output of the following C program?
+
+	#include <stdio.h>
+
+	int main() {
+	    char ch;
+	    printf("Enter a character: ");
+	    ch = getchar();
+	    printf("You entered: %c\n", ch);
+	    return 0;
+	}
+
+If a user enters A when prompted, what will be the output?
+
+a) It will print "You entered: A"
+b) It will print "You entered: A " (with a space after A)
+c) It will print "You entered: 65"
+d) It will print nothing
+Ans:
+
+
+10 : What will be the output of the following C program?
+
+	#include <stdio.h>
+
+	int main() {
+	    int a = 5, b = 2;
+	    printf("The sum of %d and %d is: %d\n", a, b, a + b);
+	    return 0;
+	}
+	
+a) It will print "The sum of 5 and 2 is: 7"
+b) It will print "The sum of a and b is: a + b"
+c) It will print "The sum of 5 and 2 is: a + b"
+d) It will result in a compilation error
+Ans:
+
+11 : Consider the following C program:
+
+	#include <stdio.h>
+
+	int main() {
+	    printf("%d\n", printf("Hello, World!"));
+	    return 0;
+	}
+
+What will be the output?
+
+a) Hello, World!
+b) 12
+c) 13
+d) 14
+Ans:
+
+12 : What will be the output of the following C program?
+
+	#include <stdio.h>
+
+	int main() {
+	    printf("%6d\n", 42);
+	    return 0;
+	}
+	
+a) 42
+b)     42
+c) 000042
+d) 42
+Ans:
+
+13 : Consider the following C program:
+
+	#include <stdio.h>
+
+	int main() {
+	    printf("%.2f\n", 3.14159);
+	    return 0;
+	}
+
+What will be the output?
+
+a) 3
+b) 3.14
+c) 3.141
+d) 3.15
+Ans:
+
+
+
